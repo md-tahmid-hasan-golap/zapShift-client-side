@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import HowWork from "../HowWork/HowWork";
 import OurService from "../OurService/OurService";
 import BrandNew from "../BrandNew/BrandNew";
+import ParcelTraking from "../ParcelTraking/ParcelTraking";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <HowWork></HowWork>
       <OurService></OurService>
       <BrandNew></BrandNew>
+      <ParcelTraking></ParcelTraking>
     </div>
   );
 };
