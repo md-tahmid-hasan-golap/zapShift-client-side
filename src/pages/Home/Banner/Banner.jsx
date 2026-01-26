@@ -8,7 +8,13 @@ import banner3 from "../../../assets/banner/banner3.png";
 const Banner = () => {
   return (
     <div className="my-7">
-      <Carousel>
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showThumbs={false}
+        showStatus={false}
+        showIndicators={false}
+      >
         <div>
           <img src={banner1} />
         </div>
