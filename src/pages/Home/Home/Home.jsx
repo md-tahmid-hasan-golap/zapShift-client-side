@@ -5,6 +5,7 @@ import OurService from "../OurService/OurService";
 import BrandNew from "../BrandNew/BrandNew";
 import ParcelTraking from "../ParcelTraking/ParcelTraking";
 import Customar from "../Customar/Customar";
+import FrequentlyQuestion from "../FrequentlyQuestion/FrequentlyQuestion";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <BrandNew></BrandNew>
       <ParcelTraking></ParcelTraking>
       <Customar></Customar>
+      <FrequentlyQuestion></FrequentlyQuestion>
     </div>
   );
 };
