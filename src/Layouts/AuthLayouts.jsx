@@ -14,7 +14,7 @@ const AuthLayouts = () => {
       {/* Main Content */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 mt-8">
         {/* Form / Outlet */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 shadow-lg p-4 rounded-lg">
           <Outlet />
         </div>
 
