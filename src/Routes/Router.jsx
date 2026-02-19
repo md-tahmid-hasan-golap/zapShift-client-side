@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import AuthLayouts from "../Layouts/AuthLayouts";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
+import ErrorElement from "../Components/ErrorElement/ErrorElement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         Component: Register,
       },
     ],
+  },
+  {
+    path: "*",
+    Component: ErrorElement,
   },
 ]);
 
