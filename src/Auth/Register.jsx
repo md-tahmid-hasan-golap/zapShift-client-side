@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../firebase/FirebaseAuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
   const { creatUser, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -17,6 +19,7 @@ const Register = () => {
     creatUser(data.email, data.password)
       .then((result) => {
         console.log(result);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -27,6 +30,7 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
