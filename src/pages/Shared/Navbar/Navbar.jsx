@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../../../Components/Logo/Logo";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../../firebase/FirebaseAuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handelLogout = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+        toast.success("Successfully logged out!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -45,11 +58,53 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login" className="btn btn-outline">
-          Sign In
-        </Link>
-      </div>
+      {user ? (
+        <div className="navbar-end">
+          <button
+            onClick={handelLogout}
+            className="
+                btn btn-sm md:btn-md 
+                bg-red-500 hover:bg-red-600 
+                border-none text-white 
+                normal-case px-4 md:px-6
+              "
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div className="navbar-end gap-2">
+          <Link to="/login" className="btn btn-outline">
+            Sign In
+          </Link>
+          <Link
+            to="/beARider"
+            className="
+    /* Background and Text Color */
+    bg-[#D9F99D] 
+    hover:bg-[#bef264] 
+    text-black 
+    
+    /* Typography */
+    font-semibold 
+    normal-case 
+    
+    /* Padding & Shape */
+    px-6 
+    py-2 
+    rounded-xl 
+    
+    /* Layout & Transition */
+    btn 
+    border-none 
+    transition-all 
+    duration-300
+  "
+          >
+            Be a rider
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
